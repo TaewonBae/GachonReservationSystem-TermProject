@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#D4F4FA">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/umbrella"
+        android:layout_marginTop="30dp"
+        />
+    <!--이 이미지뷰는 인텐트?번들? 로 받아온 물품의 사진을 띄워주는 곳-->
+    <!--일단 그냥 우산이미지를 넣어놓음-->
+
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/spinner"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape"/>
+    <!-- 스피너 -->
+    <!--이 스피너는 자기가 뭘 대여할것인지 고르는 부분-->
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:src="@drawable/rental_req_time" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/txt1"
+        android:textColor="@android:color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"/>
+    <!--현재 일시-->
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:src="@drawable/period" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/txt2"
+        android:textColor="@android:color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:background="@android:color/white" />
+    <!--마감 일시-->
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="대여 신청"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/rentalB"
+        />
+    <!--대여 신청 버튼-->
+
+</LinearLayout>

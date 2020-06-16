@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#FAF4C0">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/return_box"
+        android:layout_marginTop="30dp"
+        />
+
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/spinner"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape"/>
+    <!-- 스피너 -->
+    <!--이 스피너는 자기가 대여한 물건 중 뭘 반납할것인지 고르는 부분-->
+    <!--사용자가 이 스피너에서 물품을 선택하면 데이터베이스에 접근해서 해당 물품의 대여기록을 받아와서 밑에 마감 일시를 띄워줘야함-->
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:src="@drawable/return_req_time" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/txt1"
+        android:textColor="@android:color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"/>
+    <!--현재 일시-->
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:src="@drawable/period" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:id="@+id/txt2"
+        android:textColor="@android:color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        android:background="@android:color/white" />
+    <!--마감 일시-->
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="반납 신청"
+        android:textSize="20dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/returnB"
+        />
+    <!--반납 신청 버튼-->
+
+</LinearLayout>
