@@ -7,11 +7,11 @@
     android:background="#D4F4FA">
 
     <ImageView
+        android:id="@+id/change_imageview"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:gravity="center"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/umbrella"
         android:layout_marginTop="30dp"
         />
     <!--이 이미지뷰는 인텐트?번들? 로 받아온 물품의 사진을 띄워주는 곳-->

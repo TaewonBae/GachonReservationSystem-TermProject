@@ -152,24 +152,26 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/item_name"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_weight="6"
                             android:gravity="center"
                             android:hint="물품이름출력" />
                         <TextView
+                            android:id="@+id/item_rental_date"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_weight="5"
                             android:gravity="center"
-                            android:hint="2020년 06월 15일 09:25:32" />
+                            android:hint="2020년 00월 00일 00:00:00" />
                         <TextView
+                            android:id="@+id/item_return_date"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_weight="5"
                             android:gravity="center"
-
-                            android:hint="2020년 06월 15일 09:25:32" />
+                            android:hint="2020년 00월 00일 00:00:00" />
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>

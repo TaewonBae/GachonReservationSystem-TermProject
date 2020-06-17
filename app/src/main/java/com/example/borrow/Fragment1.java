@@ -32,6 +32,9 @@ public class Fragment1 extends Fragment {
     ViewGroup v;
     public TextView t_name;
     public TextView t_number;
+    public TextView item_name;
+    public TextView item_rental_date;
+    public TextView item_return_date;
     String total;
     String total2;
     String a;
@@ -41,6 +44,9 @@ public class Fragment1 extends Fragment {
     String e;
     String a2;
     String b2;
+    String c2;
+    String d2;
+    String e2;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,6 +55,9 @@ public class Fragment1 extends Fragment {
         //텍스트뷰 초기화
         t_number = (TextView) v.findViewById(R.id.number);
         t_name = (TextView) v.findViewById(R.id.name);
+        item_name = (TextView) v.findViewById(R.id.item_name);
+        item_rental_date = (TextView) v.findViewById(R.id.item_rental_date);
+        item_return_date = (TextView) v.findViewById(R.id.item_return_date);
 
         String url = "http://qoxodnjs.cafe24.com/UserInfo.php";
         Map<String, String> parameters = new HashMap<String, String>();
@@ -71,6 +80,7 @@ public class Fragment1 extends Fragment {
                             {
                                 total = jsonResponse.getString("result");
                                 total2 = jsonResponse.getString("result2");
+                                Log.d("total2",total2);
                                 String[] array = total.split(",");
                                 a = array[0];
                                 b = array[1];
@@ -87,6 +97,16 @@ public class Fragment1 extends Fragment {
                                 c = array2[0];
                                 d = array2[1];
                                 e = array2[2];
+
+                                c2 = c.substring(14, c.length()-1);
+                                d2 = d.substring(18, d.length()-1);
+                                e2 = e.substring(18, e.length()-2);
+                                Log.d("total2",c2);
+                                Log.d("total2",d2);
+                                Log.d("total2",e2);
+                                item_name.setText(c2);
+                                item_rental_date.setText(d2);
+                                item_return_date.setText(e2);
                             }
                             else
                             {

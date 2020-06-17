@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,11 +44,12 @@ public class Fragment5 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = (ViewGroup) inflater.inflate(R.layout.fragment5,container,false);
 
+        final ImageView background = (ImageView) v.findViewById(R.id.change_return_imageview);
         rentalT = (TextView) v.findViewById(R.id.txt1);
         returnT = (TextView) v.findViewById(R.id.txt2);
         button=(Button) v.findViewById(R.id.returnB);
 
-        String[] items = {"반납할 물품을 선택해주세요.","우산", "스마트폰 충전기", "노트북 충전기", "마우스"};
+        String[] items = {"반납할 물품을 선택해주세요.","마우스", "노트북충전기", "우산", "휴대폰충전기"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -58,8 +60,21 @@ public class Fragment5 extends Fragment {
             @Override
             public void onItemSelected(AdapterView adapterView, View view, int position, long id) {
                 itemValue = (String) adapterView.getItemAtPosition(position);
+                if (position==0){
+                    background.setBackgroundResource(R.drawable.return_box);
+                }
                 if(position!=0){//힌트로 띄워놓은 항목 제외
-                    Toast.makeText(getActivity(), itemValue+"(이)가 선택되었습니다.", Toast.LENGTH_LONG).show();
+                    if(position==1)
+                    {
+                        background.setBackgroundResource(R.drawable.mouse);
+                    }else if(position==2){
+                        background.setBackgroundResource(R.drawable.notebookcharger);
+                    }else if(position==3){
+                        background.setBackgroundResource(R.drawable.umbrella1);
+                    }else if(position==4){
+                        background.setBackgroundResource(R.drawable.phonecharger);
+                    }
+                    Toast.makeText(getActivity(), itemValue+"(이)가 선택되었습니다.", Toast.LENGTH_SHORT).show();
                 }
                 else{
                 }
@@ -76,7 +91,7 @@ public class Fragment5 extends Fragment {
                 Map<String, String> parameters = new HashMap<String, String>();
                 parameters.put("userID", ((LoginActivity) LoginActivity.context_main).userID);
                 parameters.put("itemName", itemValue);
-
+                Toast.makeText(getActivity(), itemValue+" 반납신청이 완료되었습니다.", Toast.LENGTH_SHORT).show();
                 //휴대폰충전기
                 //우산
                 //마우스
