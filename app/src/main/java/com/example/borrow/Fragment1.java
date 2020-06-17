@@ -50,8 +50,6 @@ public class Fragment1 extends Fragment {
     String[] item;
     String[] item2;
 
-    //    String f,g,h,i,j,k;
-//    String f2,g2,h2,i2,j2,k2;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -110,6 +108,7 @@ public class Fragment1 extends Fragment {
                                 e2 = e.substring(18, e.length() - 2);
                                 adapter.addItem(c2, d2, e2);  //listView에 데이터 추가
                                 adapter.notifyDataSetChanged(); //listView 갱신
+                                //item, item2 초기화(array2의 length만큼)
                                 item = array2;
                                 item2 = array2;
                                 //=============대여물품이 2개 이상 일 때=======//
