@@ -49,7 +49,7 @@ public class Fragment5 extends Fragment {
         returnT = (TextView) v.findViewById(R.id.txt2);
         button=(Button) v.findViewById(R.id.returnB);
 
-        String[] items = {"반납할 물품을 선택해주세요.","마우스", "노트북충전기", "우산", "휴대폰충전기"};
+        String[] items = {"반납하실 물품을 선택해주세요.","마우스", "노트북충전기", "우산", "휴대폰충전기"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -91,7 +91,12 @@ public class Fragment5 extends Fragment {
                 Map<String, String> parameters = new HashMap<String, String>();
                 parameters.put("userID", ((LoginActivity) LoginActivity.context_main).userID);
                 parameters.put("itemName", itemValue);
-                Toast.makeText(getActivity(), itemValue+" 반납신청이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                if (itemValue!="반납하실 물품을 선택해주세요."){
+                    Toast.makeText(getActivity(), itemValue + " 반납신청이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getActivity(), " 반납하실 물품을 선택해주세요.", Toast.LENGTH_SHORT).show();
+                }
+
                 //휴대폰충전기
                 //우산
                 //마우스

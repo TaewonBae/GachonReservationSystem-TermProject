@@ -54,7 +54,7 @@ public class Fragment4 extends Fragment {
         returnT = (TextView) v.findViewById(R.id.txt2);
         button=(Button) v.findViewById(R.id.rentalB);
 
-        String[] items = {"대여할 물품을 선택해주세요.","마우스", "노트북충전기", "우산", "휴대폰충전기"};
+        String[] items = {"대여하실 물품을 선택해주세요.","마우스", "노트북충전기", "우산", "휴대폰충전기"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -98,7 +98,11 @@ public class Fragment4 extends Fragment {
                 parameters.put("itemName", itemValue);
                 parameters.put("itemRentalDate", getTime);
                 parameters.put("itemReturnDate", getTime2);
-                Toast.makeText(getActivity(), itemValue+" 대여신청이 완료되었습니다.", Toast.LENGTH_LONG).show();
+                if (itemValue!="대여하실 물품을 선택해주세요."){
+                    Toast.makeText(getActivity(), itemValue + " 대여신청이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getActivity(), " 대여하실 물품을 선택해주세요.", Toast.LENGTH_SHORT).show();
+                }
                 //휴대폰충전기
                 //우산
                 //마우스
@@ -110,7 +114,7 @@ public class Fragment4 extends Fragment {
                             public void onResponse(JSONObject response) {
                                 try {   //밑에서 Request가 보내지고 결과로 온 Reponse가 JsonResponse를 통해 다뤄진다.
                                     JSONObject jsonResponse = response;
-                                    //result = [{"userID":"bae","userStudentID":""}]
+
                                 } catch (Exception e)//예외처리
                                 {
                                     e.printStackTrace();//간단하게 예외처리함

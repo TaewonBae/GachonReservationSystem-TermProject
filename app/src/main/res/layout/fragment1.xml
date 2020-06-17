@@ -61,7 +61,7 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/number"
+                    android:id="@+id/student_id"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/textlines"
@@ -75,7 +75,7 @@
             <TableRow>
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/student_name"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:background="@drawable/textlines"
@@ -113,13 +113,13 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="8"
-                android:background="@drawable/statescrollview">
+                android:layout_height="90dp"
+                android:layout_weight="8">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -133,12 +133,14 @@
                             android:layout_weight="6"
                             android:gravity="center"
                             android:text="물품" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_weight="5"
                             android:gravity="center"
                             android:text="대여일" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
@@ -146,33 +148,11 @@
                             android:gravity="center"
                             android:text="반납일" />
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/item_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_weight="6"
-                            android:gravity="center"
-                            android:hint="물품이름출력" />
-                        <TextView
-                            android:id="@+id/item_rental_date"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_weight="5"
-                            android:gravity="center"
-                            android:hint="2020년 00월 00일 00:00:00" />
-                        <TextView
-                            android:id="@+id/item_return_date"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_weight="5"
-                            android:gravity="center"
-                            android:hint="2020년 00월 00일 00:00:00" />
-                    </LinearLayout>
+                    <ListView
+                        android:id="@+id/item_list_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="249dp" />
                 </LinearLayout>
             </ScrollView>
 

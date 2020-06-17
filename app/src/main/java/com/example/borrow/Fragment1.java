@@ -1,18 +1,16 @@
 package com.example.borrow;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
@@ -30,31 +28,45 @@ import java.util.Map;
 
 public class Fragment1 extends Fragment {
     ViewGroup v;
-    public TextView t_name;
-    public TextView t_number;
+
+    private ListView listview;
+    private ListViewAdapter adapter;
+
+    public TextView student_name;
+    public TextView student_id;
     public TextView item_name;
     public TextView item_rental_date;
     public TextView item_return_date;
-    String total;
-    String total2;
-    String a;
-    String b;
-    String c;
-    String d;
-    String e;
-    String a2;
-    String b2;
-    String c2;
-    String d2;
-    String e2;
+
+    int i=3;
+    String result;
+    String result2;
+
+    String a,b,c,d,e;
+    String a2,b2,c2,d2,e2;
+
+    String[] array;
+    String[] array2;
+    String[] item;
+    String[] item2;
+
+    //    String f,g,h,i,j,k;
+//    String f2,g2,h2,i2,j2,k2;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = (ViewGroup) inflater.inflate(R.layout.fragment1, container, false);
 
+        //Adapter 생성
+        adapter = new ListViewAdapter();
+
+        //리스트뷰 참조 및 Adapter
+        listview = (ListView) v.findViewById(R.id.item_list_view);
+        listview.setAdapter(adapter);
+
         //텍스트뷰 초기화
-        t_number = (TextView) v.findViewById(R.id.number);
-        t_name = (TextView) v.findViewById(R.id.name);
+        student_id = (TextView) v.findViewById(R.id.student_id);
+        student_name = (TextView) v.findViewById(R.id.student_name);
         item_name = (TextView) v.findViewById(R.id.item_name);
         item_rental_date = (TextView) v.findViewById(R.id.item_rental_date);
         item_return_date = (TextView) v.findViewById(R.id.item_return_date);
@@ -76,41 +88,43 @@ public class Fragment1 extends Fragment {
                         try {   //밑에서 Request가 보내지고 결과로 온 Reponse가 JsonResponse를 통해 다뤄진다.
                             JSONObject jsonResponse = response;
                             //result = [{"userID":"bae","userStudentID":""}]
-                            if (jsonResponse.getString("result").isEmpty() == false)
-                            {
-                                total = jsonResponse.getString("result");
-                                total2 = jsonResponse.getString("result2");
-                                Log.d("total2",total2);
-                                String[] array = total.split(",");
+                            if (jsonResponse.getString("result").isEmpty() == false) {
+                                result = jsonResponse.getString("result");
+                                result2 = jsonResponse.getString("result2");
+                                Log.d("result2", result2);
+                                //=============사용자 이름, 학번 출력=============//
+                                array = result.split(",");
                                 a = array[0];
                                 b = array[1];
-                                Log.d("total",a);
-                                Log.d("total",b);
-                                a2 = a.substring(14,a.length()-1);
-                                b2 = b.substring(17,b.length()-3);
-                                Log.d("total",a2);
-                                Log.d("total",b2);
-                                t_number.setText(b2);
-                                t_name.setText(a2);
-
-                                String[] array2 = total2.split(",");
+                                a2 = a.substring(14, a.length() - 1);
+                                b2 = b.substring(17, b.length() - 3);
+                                student_id.setText(b2);
+                                student_name.setText(a2);
+                                //=============대여물품정보 출력=============//
+                                array2 = result2.split(",");
                                 c = array2[0];
                                 d = array2[1];
                                 e = array2[2];
-
-                                c2 = c.substring(14, c.length()-1);
-                                d2 = d.substring(18, d.length()-1);
-                                e2 = e.substring(18, e.length()-2);
-                                Log.d("total2",c2);
-                                Log.d("total2",d2);
-                                Log.d("total2",e2);
-                                item_name.setText(c2);
-                                item_rental_date.setText(d2);
-                                item_return_date.setText(e2);
-                            }
-                            else
-                            {
-                                total = jsonResponse.getString("result2");
+                                c2 = c.substring(14, c.length() - 1);
+                                d2 = d.substring(18, d.length() - 1);
+                                e2 = e.substring(18, e.length() - 2);
+                                adapter.addItem(c2, d2, e2);  //listView에 데이터 추가
+                                adapter.notifyDataSetChanged(); //listView 갱신
+                                item = array2;
+                                item2 = array2;
+                                //=============대여물품이 2개 이상 일 때=======//
+                                for(i=3;i<array2.length;i=i+3) {
+                                    item[i] = array2[i];
+                                    item2[i] = item[i].substring(13, item[i].length() - 1);
+                                    item[i + 1] = array2[i + 1];
+                                    item2[i + 1] = item[i + 1].substring(18, item[i + 1].length() - 1);
+                                    item[i + 2] = array2[i + 2];
+                                    item2[i + 2] = item[i + 2].substring(18, item[i + 2].length() - 2);
+                                    adapter.addItem(item[i], item[i + 1], item[i + 2]);
+                                    adapter.notifyDataSetChanged();
+                                }
+                            } else {
+                                result = jsonResponse.getString("result2");
                             }
 
 
