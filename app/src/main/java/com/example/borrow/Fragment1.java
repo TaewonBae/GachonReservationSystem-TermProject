@@ -27,6 +27,7 @@ import java.util.Map;
 //사용자 대여 신청 화면
 
 public class Fragment1 extends Fragment {
+    //위젯 초기화
     ViewGroup v;
 
     private ListView listview;
