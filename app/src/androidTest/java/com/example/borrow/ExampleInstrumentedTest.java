@@ -1,6 +1,8 @@
 package com.example.borrow;
 
 import android.content.Context;
+import android.content.Intent;
+import android.widget.TextView;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -17,11 +19,13 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
+
     @Test
     public void useAppContext() {
-        // Context of the app under test.
+        // Context of the app under test. 가상의 컨텍스트를 얻는다. appContext로 가져다 사용하면된다.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
         assertEquals("com.example.borrow", appContext.getPackageName());
     }
+
+
 }

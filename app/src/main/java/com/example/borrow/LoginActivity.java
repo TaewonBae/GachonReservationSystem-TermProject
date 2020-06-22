@@ -18,7 +18,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -30,6 +29,9 @@ public class LoginActivity extends AppCompatActivity {
     public static Context context_main;
     public String userID;
     public String userPassword;
+    public EditText idText;
+    public EditText passwordText;
+    public Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +52,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         //로그인 id, password, button 초기화
-        final EditText idText = (EditText) findViewById(R.id.idText);
-        final EditText passwordText = (EditText) findViewById(R.id.passwordText);
-        final Button loginButton = (Button) findViewById(R.id.loginButton);
+        idText = (EditText) findViewById(R.id.idText);
+        passwordText = (EditText) findViewById(R.id.passwordText);
+        loginButton = (Button) findViewById(R.id.loginButton);
 
         //로그인 버튼 이벤트처리
         loginButton.setOnClickListener(new View.OnClickListener() {

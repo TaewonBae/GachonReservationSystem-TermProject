@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Fragment1 fragment1;
     Fragment2 fragment2;
-    Fragment3 fragment3;
     Fragment4 fragment4;
     Fragment5 fragment5;
 
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         //프래그먼트 생성
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();
-        fragment3 = new Fragment3();
         fragment4= new Fragment4();
         fragment5 = new Fragment5();
 
@@ -53,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction() .replace(R.id.main_layout,fragment2).commitAllowingStateLoss();
                         return true;
                     }
-                    case R.id.tab3:{
-                        getSupportFragmentManager().beginTransaction() .replace(R.id.main_layout,fragment3).commitAllowingStateLoss();
-                        return true;
-                    }
                     case R.id.tab4:{
                         getSupportFragmentManager().beginTransaction() .replace(R.id.main_layout,fragment4).commitAllowingStateLoss();
                         return true;
@@ -70,24 +64,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    //Fragment3의 물품관리 버튼이 눌렸을 때
-    public void mOnPopupClick(View v){
-        //데이터 담아서 팝업(액티비티) 호출
-        Intent intent = new Intent(this, PopupActivity.class);
-        startActivityForResult(intent, 1);
-    }
-
-    //팝업창이 닫였을 때 받는 값
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
-                //데이터 받기
-                String result = data.getStringExtra("result");
-            }
-        }
     }
 }
