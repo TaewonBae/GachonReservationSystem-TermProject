@@ -1,3 +1,4 @@
+## Concept
 ### 1. Object
 
 *We implemented it as an application so that we can conveniently use the product rental service provided by the software department*
@@ -5,62 +6,110 @@
 <img src="https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png" width="600" height="350"/>
 
 ### 2. Function
+*This application consists of three main categories*
 
 <img src="https://user-images.githubusercontent.com/43931412/206677639-046c3729-9e36-4778-9505-182b7df3bcc0.png" width="600" height="350"/>
 
+### 3. Implementation
 
-*You may have experience in forming squads through FM or FIFA Online.*
-*You can enjoy it on the WEB in 3D!*
+<img src="https://user-images.githubusercontent.com/43931412/206678487-7459b6a2-317c-4efc-af62-4024b4cde4b0.png" width="400" height="240"/>
 
+<img src="https://user-images.githubusercontent.com/43931412/206678961-b1f359da-52a1-43ce-90f9-0d8c6e5583cb.png" width="600" height="350"/>
 
-### 1. Description
-- There are 25 players in the game.
-- User have to pay a certain fee to transfer a player.
-- Users can choose their preferred players.
-- User have to make a squad within $15
-- Warning message will be printed if the value exceeds $15
-- Make your own best squad!
-- You can enjoy it on the WEB in 3D!
+- We recorded the user's information on the server using phpmyAdmin, and also recorded the information for managing the item.
 
 </br>
 
-### 2. KeyFeature
-
-![img2](https://user-images.githubusercontent.com/43931412/206653875-fc2e5231-27e3-4740-9648-fd011375f28f.png)
-
-- All players are modeled in 3D, and they can be viewed from various angles by implementing a camera vision.
-- The Light Source is fixed in the upper right corner, and you can see that it is applied in a variety of ways depending on the viewer's perspective. 
-- You can now see the light source applied to the stand position.
-- We expressed it more realistically by applying scaling to match the actual players' height.
-- Translation can be applied to keyboard events to place players in the desired position, and rotations can be used to rotate players.
+## Requirement Analysis - Functional
+### 1. User Requirement definition
+- The rental system shall shows the user whether the rental items can be rented, the number of items remaining, and where they can be rented.
+- The rental system shall save the user's student information and rental information are automatically when a user applies for a rent.
+- The rental system shall save the user's student information and rental information are automatically when a user applies for a return.
+- The rental system shall shows to users about their rental records.
 
 </br>
 
-### 3. Detail 1
-
-![img3](https://user-images.githubusercontent.com/43931412/206654717-95c6b371-43a3-4d87-807a-6bec86084067.png)
-
-- In the case of Scaling, a specific magnification was multiplied by 185cm to adjust the size to the actual height of each player.
-- For Translation, apply a keyboard event based on the ZX plane to match the keyboard by 0.5 on the x-axis.
-- It is implemented so that the player can move by 0.5 on the z-axis.
-- For Rotation, press Q relative to the y-axis and press E to rotate the competitor by approximately 5.7 degrees for each counterclockwise press.
+### 2. System Requirement specification
+- The rental system shall provide user to be able to sign in and log in within the application.
+- If the user clicks rental button, it shall be automatically store user's personal information, rental items, date and time into the server database.
+- The number of borrowable items shall be automatically reduced along with rent request.
+- The rental system shall read the user's borrowing history from the server database and display it in the application.
+- The rental system shall read the current number of items remaining and where they can be rented from the server's database and display them in the application.
 
 </br>
 
-### 4. Detail 2
-
-![img4](https://user-images.githubusercontent.com/43931412/206654972-a0f7b6bf-7c0c-4c1c-b48f-42fa68652986.png)
-
-- Because we used 3Dobj, we used obj files to load vector values applied to each model and Texture files for image mapping, and loaded MTL files to apply Texture.
-- In the process, the material values of MTL and obj files were modified according to the player using various png files corresponding to the textures such as the player's eyes, hair, uniform, and skin.
+## Requirement Analysis - Non Functional
+### 1. Usability
+- Easy enough for users to use the app for the first time without instructions
+- Users can easily check their rental history
+- Users can easily check item status
 
 </br>
 
-### 5. Detail 3
+### 2. Reliability
+- Application smoothly send and receive data to server
+- Entire system active well and high accuracy is provided
+- Ensure that other users cannot access user's personal rental records 
 
-![img5](https://user-images.githubusercontent.com/43931412/206655396-fb0e8807-8315-425f-ad26-c061aac98211.png)
+</br>
 
-- Most of the obj and Texture files for 3D models were paid, so it was difficult to get files for 25 players, but we got a file for one player and designed a uniform for 25 players, skin, and hair, and applied it to each player.
+### 3. Performance
+- When user logs in, the account can linked within 1 Seconds
+- User can check their rental history within 1 Seconds
+- User can check whether item is borrowable and where they can rent it within 1 second
+- When user request rental/return, it stores in server database within 1 seconds
+
+</br>
+
+## Requirement Analysis - User Scenario
+### 1. User-Scenario
+
+- User wants to borrow something.
+- User can run the application and login first .
+- Then user can see if the item user want to borrow is available and where user can borrow it from.
+- Then user goes to the place where user will rent the item.
+- User clicks the rental button, and shows it to the manager. 
+- Then the manager will provides the goods to User.
+- Users can check their rental records after renting a item, so they can know when to return the item.
+- After using item, user go to rental place and click return button.
+- Then return item to manager.
+
+## System Modeling
+### 1. Activity Diagram
+- In the activity diagram, after launching the app, the login window appears, and it expresses what happens during the app, from login confirmation, membership registration, product inquiry, product reservation, and app termination.
+### 2. Class Diagram
+- The class diagram defines the classes of login, membership, reservation, return, commodity lookup, database, and server to be used in the system, and shows the relationship between these classes as a diagram.
+### 3. Class Diagram
+- The use case diagram shows the relationship with the server as a use case according to the user's position.
+
+<img src="https://user-images.githubusercontent.com/43931412/206682794-5dd0414d-2346-4535-95c9-55b33bf3bd61.png" width="600" height="350"/>
+
+<img src="https://user-images.githubusercontent.com/43931412/206682802-837256fc-1bd4-4438-b9ee-17c87a1082a5.png" width="600" height="350"/>
+
+<img src="https://user-images.githubusercontent.com/43931412/206682809-e63a2835-62a1-4085-97ed-ef7457a354d9.png" width="600" height="350"/>
+
+</br>
+
+## Architecture Design
+### 1. Client-Server Architecture
+- The system has a client-server pattern that helps you manage user and reservation information.
+- Multiple users can access the system at the same time, and DB server manages user information, reservation time, return time, and product information.
+### 2. Repository Architecture
+- Since many users use it at once, it is designed to consistently manage data with a DB server called phpMyAdmin in order to efficiently exchange data.
+### 3. Model-View-Controller Pattern
+- The system has MVC patterns for login and reservation functions. 
+- The model receives reservation and return time information and updates it on the controller.
+- In View, ListView displays the commodity name, reservation time, return time, and updated list.
+
+<img src="https://user-images.githubusercontent.com/43931412/206682811-9fb8c0df-c4b7-42e1-add5-f23043fec080.png" width="600" height="350"/>
+
+<img src="https://user-images.githubusercontent.com/43931412/206682813-e6bc472c-caca-4afb-b4de-57b4913acfbb.png" width="600" height="350"/>
+
+<img src="https://user-images.githubusercontent.com/43931412/206682814-6242f228-3a1c-4118-ac63-a936680cf886.png" width="600" height="350"/>
+
+
+
+
 
 </br>
 
