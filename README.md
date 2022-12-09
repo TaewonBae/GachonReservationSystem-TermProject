@@ -1,19 +1,17 @@
+### 1. Object
+
+*We implemented it as an application so that we can conveniently use the product rental service provided by the software department*
+
+<img src="https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png" width="600" height="400"/><img src="https://user-images.githubusercontent.com/43931412/206677135-137db5e0-31e0-45d8-966d-18cc23c7cc2e.png" width="250" height="400"/>
+
 ![img5](https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png)
 
 
 
 
-### 1. Object
-*We implemented it as an application so that we can conveniently use the product rental service provided by the software department*
 
-</br>
+![img6](https://user-images.githubusercontent.com/43931412/206677135-137db5e0-31e0-45d8-966d-18cc23c7cc2e.png)
 
-- Select and place the competitor in the desired position.
-- If you select a duplicate player, you will receive a warning message.
-- The balance in the upper left corner of the table will be reduced as the player is recruited.
-- An error message is output when the balance is exceeded.
-- If you form a team, you will be able to do the squad that you made
-- You can see it at different angles and locations.
 
 
 ## What is FootballSquadSimulator?
