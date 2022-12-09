@@ -1,5 +1,4 @@
-## SE_TermProject
-#Software Engineering term project (Gachon University Item Reservation System App)
+## Gachon University Item Reservation System App - 가천대학교 물품 대여 시스템
 
 Developer
 >201533647 배태원  
