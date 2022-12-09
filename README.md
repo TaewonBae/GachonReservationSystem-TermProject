@@ -1,10 +1,10 @@
-## Gachon University Item Reservation System App
-## FootballSquadSimulator Demo Video
-![image1](https://user-images.githubusercontent.com/43931412/146496636-f17b2e29-6f4e-4e15-8b28-b46ff1fcb9be.gif)
+![img5](https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png)
 
 
-## FootballSquadSimulator Demo Video
-*Click on the image below to play the demo video.*
+
+
+### 1. Object
+*We implemented it as an application so that we can conveniently use the product rental service provided by the software department*
 
 </br>
 
@@ -74,6 +74,9 @@
 
 </br>
 
+### Demo Video
+
+![image1](https://user-images.githubusercontent.com/43931412/146496636-f17b2e29-6f4e-4e15-8b28-b46ff1fcb9be.gif)
 
 ### 6. Developer
 
