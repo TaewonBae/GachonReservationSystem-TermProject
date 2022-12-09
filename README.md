@@ -2,11 +2,11 @@
 
 *We implemented it as an application so that we can conveniently use the product rental service provided by the software department*
 
-<img src="https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png" width="600" height="400"/>
+<img src="https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png" width="600" height="350"/>
 
 ### 2. Function
 
-<img src="https://user-images.githubusercontent.com/43931412/206677639-046c3729-9e36-4778-9505-182b7df3bcc0.png" width="600" height="400"/>
+<img src="https://user-images.githubusercontent.com/43931412/206677639-046c3729-9e36-4778-9505-182b7df3bcc0.png" width="600" height="350"/>
 
 
 *You may have experience in forming squads through FM or FIFA Online.*
