@@ -2,20 +2,12 @@
 
 *We implemented it as an application so that we can conveniently use the product rental service provided by the software department*
 
-<img src="https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png" width="600" height="400"/><img src="https://user-images.githubusercontent.com/43931412/206677135-137db5e0-31e0-45d8-966d-18cc23c7cc2e.png" width="250" height="400"/>
+<img src="https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png" width="600" height="400"/>
 
-![img5](https://user-images.githubusercontent.com/43931412/206673657-e0820c60-70f2-4135-9df4-4b688c01de24.png)
+### 2. Function
 
+<img src="https://user-images.githubusercontent.com/43931412/206677639-046c3729-9e36-4778-9505-182b7df3bcc0.png" width="600" height="400"/>
 
-
-
-
-![img6](https://user-images.githubusercontent.com/43931412/206677135-137db5e0-31e0-45d8-966d-18cc23c7cc2e.png)
-
-
-
-## What is FootballSquadSimulator?
-<img src="https://user-images.githubusercontent.com/43931412/206649262-3d9e8576-5efd-46c9-99d5-cde0b72459d8.png"/>
 
 *You may have experience in forming squads through FM or FIFA Online.*
 *You can enjoy it on the WEB in 3D!*
